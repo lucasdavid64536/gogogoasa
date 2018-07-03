@@ -343,9 +343,11 @@ async def presence():
                 if u.bot == False:
                     a = a + 1
 
-        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s servers | e?help' % (len(bot.guilds))))
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s servers | f.help' % (len(bot.guilds))))
         await sleep(30)
-        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s users | e?help' % (len(bot.users))))
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s users | f.help' % (len(bot.users))))
+        await sleep(30)
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s empero-flex.ml | f.help' % (len(bot.users))))
         await sleep(30)
 
 
