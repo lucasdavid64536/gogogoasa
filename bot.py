@@ -92,7 +92,7 @@ async def purge(ctx, number : int):
 @commands.cooldown(1, 5, commands.BucketType.user)
 @bot.command()
 async def help(ctx):
-    await ctx.author.send("""Flex commands:                                                                              
+    await ctx.author.send("""    Flex commands:                                                                             
     Funny                                                                                         
 **f.say** : Make the bot say whatever you want                                                    
 **f.ping** : Check the bot latency                                                                
@@ -124,7 +124,7 @@ Music
 **f.pause** : Pause the track                                                                     
 **f.resume** : Unpause the track                                                                                    
 **f.join** : comand and name channel to join in channel : f.join music""")
-    await ctx.send(':mailbox_with_mail:  | ** {ctx.author.name} ** , check your DMs!')
+    await ctx.send(f':mailbox_with_mail:  | ** {ctx.author.name} ** , check your DMs!')
     
 
   
