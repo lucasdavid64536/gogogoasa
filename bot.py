@@ -92,28 +92,31 @@ async def purge(ctx, number : int):
 @commands.cooldown(1, 5, commands.BucketType.user)
 @bot.command()
 async def help(ctx):
-    await ctx.author.send("""    Empero commands:
-**e?say** : Make the bot say whatever you want
-**e?ping** : Check the bot latency
-**e?search** : Search something on Google
-**e?avatar** : Get a player's avatar
-**e?8ball** : Ask the Magic 8-Ball""")
-    await ctx.author.send("""
+    await ctx.author.send("""    Flex commands:
+    Funny <a:fast:459053501625008139>
+**f.say** : Make the bot say whatever you want
+**f.ping** : Check the bot latency
+**f.search** : Search something on Google
+**f.avatar** : Get a player's avatar
+**f.8ball** : Ask the Magic 8-Ball
+
+Moderation 🛠
+
 **e?playerinfo @<member>** : Get a member's info
 **e?serverinfo** Get a guild/server info
 **e?botinfo** : Get the bot info
 **e?lenny** : Just a lenny face
 **e?respect** : Pay #respect
-**e?support** : Returns the BOT support server""")
-    await ctx.author.send("""
+**e?support** : Returns the BOT support server
 **e?kick** : Kick a member (works only if the player has the Kick perm.)
 **e?ban** : Ban a member (works only if the player has the Ban perm.)
 **e?mass** : Sends a message to all members in a guild (BOT Owner only)
 **e?shutdown** : Shuts down the bot (BOT Owner only)
 **e?purge** : Clears a number of messages (works only if the player has the Manage Channels perm.)
 **e?cat** : Something cute is going on here
-""")
-    await ctx.author.send("""
+
+Music <:casti:458199764475969537>
+
 **e?play** : Play a song
 **e?stop** : Stops the track
 **e?queue** : See the following tracks
@@ -347,7 +350,7 @@ async def presence():
         await sleep(30)
         await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s users | f.help' % (len(bot.users))))
         await sleep(30)
-        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s empero-flex.ml | f.help' % (len(bot.users))))
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='% empero-flex.ml | f.help' % (len(bot.users))))
         await sleep(30)
 
 
