@@ -124,7 +124,7 @@ Music
 **f.pause** : Pause the track                                                                     
 **f.resume** : Unpause the track                                                                                    
 **f.join** : comand and name channel to join in channel : f.join music""")
-    await ctx.message.channel.send(':mailbox_with_mail:  | ** {ctx.author.name} ** , check your DMs!', delete_after=10)
+    await ctx.send(':mailbox_with_mail:  | ** {ctx.author.name} ** , check your DMs!')
     
 
   
@@ -235,7 +235,7 @@ async def on_message(message):
 @bot.command()
 async def invite(ctx):
     """Gives you the BOT invite link."""
-    await ctx.send("Invite the BOT here: https://discordapp.com/api/oauth2/authorize?client_id=459000712538357760&permissions=201603158&scope=bot")
+    await ctx.send("Invite the BOT here: https://discordapp.com/api/oauth2/authorize?client_id=458912845438910464&permissions=201603158&scope=bot")
 
 @commands.cooldown(1, 5, commands.BucketType.user)
 @bot.command()
