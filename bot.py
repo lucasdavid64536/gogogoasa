@@ -92,39 +92,43 @@ async def purge(ctx, number : int):
 @commands.cooldown(1, 5, commands.BucketType.user)
 @bot.command()
 async def help(ctx):
-    await ctx.author.send("""    Flex commands:
-    Funny <a:fast:459053501625008139>
-**f.say** : Make the bot say whatever you want
-**f.ping** : Check the bot latency
-**f.search** : Search something on Google
-**f.avatar** : Get a player's avatar
-**f.8ball** : Ask the Magic 8-Ball
-
-Moderation 🛠
-
-**e?playerinfo @<member>** : Get a member's info
-**e?serverinfo** Get a guild/server info
-**e?botinfo** : Get the bot info
-**e?lenny** : Just a lenny face
-**e?respect** : Pay #respect
-**e?support** : Returns the BOT support server
-**e?kick** : Kick a member (works only if the player has the Kick perm.)
-**e?ban** : Ban a member (works only if the player has the Ban perm.)
-**e?mass** : Sends a message to all members in a guild (BOT Owner only)
-**e?shutdown** : Shuts down the bot (BOT Owner only)
-**e?purge** : Clears a number of messages (works only if the player has the Manage Channels perm.)
-**e?cat** : Something cute is going on here
-
-Music <:casti:458199764475969537>
-
-**e?play** : Play a song
-**e?stop** : Stops the track
-**e?queue** : See the following tracks
-**e?skip** : Plays the next song
-**e?pause** : Pause the track
-**e?resume** : Unpause the track
-**e?join** : Join a voice channel""")
-    await ctx.send(f':mailbox_with_mail:  | ** {ctx.author.name} ** , check your DMs!')
+    await ctx.author.send("""
+____________________________________________________________________________________________________
+|    `Flex commands:`                                                                              |
+|    Funny                                                                                         |
+|**f.say** : Make the bot say whatever you want                                                    |
+|**f.ping** : Check the bot latency                                                                |
+|**f.search** : Search something on Google                                                         |
+|**f.avatar** : Get a player's avatar                                                              |
+|**f.8ball** : Ask the Magic 8-Ball                                                                |
+|                                                                                                  |
+|Moderation 🛠                                                                                     |
+|                                                                                                  |
+|**f.playerinfo @<member>** : Get a member's info                                                  |
+|**f.serverinfo** Get a guild/server info                                                          |
+|**f.botinfo** : Get the bot info                                                                  |
+|**f.lenny** : Just a lenny face                                                                   |
+|**f.respect** : Pay #respect                                                                      |
+|**f.support** : Returns the BOT support server                                                    |
+|**f.kick** : Kick a member (works only if the player has the Kick perm.)                          |
+|**f.ban** : Ban a member (works only if the player has the Ban perm.)                             |
+|**f.mass** : Sends a message to all members in a guild (BOT Owner only)                           |
+|**f.shutdown** : Shuts down the bot (BOT Owner only)                                              |
+|**f.purge** : Clears a number of messages (works only if the player has the Manage Channels perm.)|
+|**f.cat** : Something cute is going on here                                                       |   
+|                                                                                                  |
+|Music                                                                                             |
+|                                                                                                  |
+|**e?play** : Play a song                                                                          |
+|**e?stop** : Stops the track                                                                      |
+|**e?queue** : See the following tracks                                                            |
+|**e?skip** : Plays the next song                                                                  |
+|**e?pause** : Pause the track                                                                     |
+|**e?resume** : Unpause the track                                                                  |                   
+|**e?join** : comand and name channel to join in channel : f.join music                            |
+____________________________________________________________________________________________________""")
+    await ctx.send(f':mailbox_with_mail:  | ** {ctx.author.name} ** , check your DMs!', delete_after=10)
+    
 
   
 
@@ -135,7 +139,7 @@ Music <:casti:458199764475969537>
 @bot.listen()
 async def on_message(message : discord.Message):
     if bot.user.mentioned_in(message):
-        await message.channel.send(':sleeping: | You woke me up :( . My prefix is `e?` , for a list of commands type `e?help`', delete_after=10)
+        await message.channel.send(':sleeping: | You woke me up :( . My prefix is `f.` , for a list of commands type `f.help`', delete_after=10)
 
 @bot.listen()
 async def on_command_error(ctx, error):
@@ -227,7 +231,7 @@ async def avatar(ctx, member: discord.Member=None):
 
 @bot.listen()
 async def on_message(message):
-    if message.content.lower() == 'e?support' and message.author != bot.user:
+    if message.content.lower() == 'f.support' and message.author != bot.user:
         await message.channel.send('The support server is: https://discord.gg/GF3RWsd')
 
 @commands.cooldown(1, 5, commands.BucketType.user)
@@ -350,8 +354,26 @@ async def presence():
         await sleep(30)
         await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s users | f.help' % (len(bot.users))))
         await sleep(30)
-        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='% empero-flex.ml | f.help' % (len(bot.users))))
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=' empero-flex.ml | f.help' % (len(bot.users))))
         await sleep(30)
+
+
+@commands.cooldown(1, 5, commands.BucketType.user)  
+@bot.command()
+async def binfo(ctx):
+    """Get the BOT info"""
+    em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.blue())
+    em.set_author(name="BOT Info")
+    em.add_field(name="Name", value=ctx.bot.user.name, inline=True)
+    em.add_field(name="ID", value=ctx.bot.user.id, inline=True)
+    em.add_field(name="Prefix", value=ctx.bot.command_prefix, inline=True)
+    em.add_field(name="Made with", value='Python 3.6.5', inline=True)
+    em.add_field(name="Tag:", value=ctx.me.discriminator, inline=True)
+    em.add_field(name="Creator", value='<@419472407816830986>', inline=True)
+    em.add_field(name="Created at", value=ctx.bot.user.created_at, inline=True)
+    em.set_thumbnail(url=ctx.me.avatar_url)
+    msg = await ctx.send(embed=em)
+        
 
 
 
@@ -366,27 +388,7 @@ async def botinfo(ctx):
     em.add_field(name="Prefix", value=ctx.bot.command_prefix, inline=True)
     em.add_field(name="Made with", value='Python 3.6.5', inline=True)
     em.add_field(name="Tag:", value=ctx.me.discriminator, inline=True)
-    em.add_field(name="Creator", value='<@404708655578218511>', inline=True)
-    em.add_field(name="Created at", value=ctx.bot.user.created_at, inline=True)
-    em.set_thumbnail(url=ctx.me.avatar_url)
-    msg = await ctx.send(embed=em)
-    
-
-
-
-
-@commands.cooldown(1, 5, commands.BucketType.user)  
-@bot.command()
-async def binfo(ctx):
-    """Get the BOT info"""
-    em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.blue())
-    em.set_author(name="BOT Info")
-    em.add_field(name="Name", value=ctx.bot.user.name, inline=True)
-    em.add_field(name="ID", value=ctx.bot.user.id, inline=True)
-    em.add_field(name="Prefix", value=ctx.bot.command_prefix, inline=True)
-    em.add_field(name="Made with", value='Python 3.6.5', inline=True)
-    em.add_field(name="Tag:", value=ctx.me.discriminator, inline=True)
-    em.add_field(name="Creator", value='<@404708655578218511>', inline=True)
+    em.add_field(name="Creator", value='<@419472407816830986>', inline=True)
     em.add_field(name="Created at", value=ctx.bot.user.created_at, inline=True)
     em.set_thumbnail(url=ctx.me.avatar_url)
     msg = await ctx.send(embed=em)
