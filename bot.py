@@ -92,42 +92,39 @@ async def purge(ctx, number : int):
 @commands.cooldown(1, 5, commands.BucketType.user)
 @bot.command()
 async def help(ctx):
-    await ctx.author.send("""
-____________________________________________________________________________________________________
-|    `Flex commands:`                                                                              |
-|    Funny                                                                                         |
-|**f.say** : Make the bot say whatever you want                                                    |
-|**f.ping** : Check the bot latency                                                                |
-|**f.search** : Search something on Google                                                         |
-|**f.avatar** : Get a player's avatar                                                              |
-|**f.8ball** : Ask the Magic 8-Ball                                                                |
-|                                                                                                  |
-|Moderation 🛠                                                                                     |
-|                                                                                                  |
-|**f.playerinfo @<member>** : Get a member's info                                                  |
-|**f.serverinfo** Get a guild/server info                                                          |
-|**f.botinfo** : Get the bot info                                                                  |
-|**f.lenny** : Just a lenny face                                                                   |
-|**f.respect** : Pay #respect                                                                      |
-|**f.support** : Returns the BOT support server                                                    |
-|**f.kick** : Kick a member (works only if the player has the Kick perm.)                          |
-|**f.ban** : Ban a member (works only if the player has the Ban perm.)                             |
-|**f.mass** : Sends a message to all members in a guild (BOT Owner only)                           |
-|**f.shutdown** : Shuts down the bot (BOT Owner only)                                              |
-|**f.purge** : Clears a number of messages (works only if the player has the Manage Channels perm.)|
-|**f.cat** : Something cute is going on here                                                       |   
-|                                                                                                  |
-|Music                                                                                             |
-|                                                                                                  |
-|**e?play** : Play a song                                                                          |
-|**e?stop** : Stops the track                                                                      |
-|**e?queue** : See the following tracks                                                            |
-|**e?skip** : Plays the next song                                                                  |
-|**e?pause** : Pause the track                                                                     |
-|**e?resume** : Unpause the track                                                                  |                   
-|**e?join** : comand and name channel to join in channel : f.join music                            |
-____________________________________________________________________________________________________""")
-    await ctx.send(f':mailbox_with_mail:  | ** {ctx.author.name} ** , check your DMs!', delete_after=10)
+    await ctx.author.send("""Flex commands:                                                                              
+    Funny                                                                                         
+**f.say** : Make the bot say whatever you want                                                    
+**f.ping** : Check the bot latency                                                                
+**f.search** : Search something on Google                                                         
+**f.avatar** : Get a player's avatar                                                              
+**f.8ball** : Ask the Magic 8-Ball                                                                
+                                                                                                  
+Moderation 🛠                                                                                     
+                                                                                                  
+**f.playerinfo @<member>** : Get a member's info                                                  
+**f.serverinfo** Get a guild/server info                                                          
+**f.botinfo** : Get the bot info                                                                  
+**f.lenny** : Just a lenny face                                                                   
+**f.respect** : Pay #respect                                                                      
+**f.support** : Returns the BOT support server                                                    
+**f.kick** : Kick a member (works only if the player has the Kick perm.)                          
+**f.ban** : Ban a member (works only if the player has the Ban perm.)                             
+**f.mass** : Sends a message to all members in a guild (BOT Owner only)                           
+**f.shutdown** : Shuts down the bot (BOT Owner only)                                              
+**f.purge** : Clears a number of messages (works only if the player has the Manage Channels perm.)
+**f.cat** : Something cute is going on here                                                          
+                                                                                                  
+Music                                                                                             
+                                                                                                  
+**f.play** : Play a song                                                                          
+**f.stop** : Stops the track                                                                      
+**f.queue** : See the following tracks                                                            
+**f.skip** : Plays the next song                                                                  
+**f.pause** : Pause the track                                                                     
+**f.resume** : Unpause the track                                                                                    
+**f.join** : comand and name channel to join in channel : f.join music""")
+    await ctx.message.channel.send(':mailbox_with_mail:  | ** {ctx.author.name} ** , check your DMs!', delete_after=10)
     
 
   
