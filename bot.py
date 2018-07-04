@@ -98,7 +98,7 @@ async def help(ctx):
     """help commands"""
     em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.RANDOM())
     em.set_author(name="")
-    em.add_field(name=f"{ctx.author.name}", use', inline=True)
+    em.add_field(name=f"{ctx.author.name}", 'use', inline=True)
 	em.add_field(name="**f.helpfun**- Fun commands")
 	em.add_field(name="**f.helpinfo**- Info commands")
 	em.add_field(name="**f.helpmod**- Moderation commands")
