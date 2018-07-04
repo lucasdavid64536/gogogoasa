@@ -105,9 +105,9 @@ async def help(ctx):
 	em.add_field(name="**f.helpmusic**- Music commands")
     msg = await ctx.send(embed=em)
     await msg.add_reaction('\N{regional indicator symbol letter h}')
-	await msg.add_reaction('\N{regional indicator symbol letter e}')
-	await msg.add_reaction('\N{regional indicator symbol letter l}')
-	await msg.add_reaction('\N{regional indicator symbol letter p}')
+    await msg.add_reaction('\N{regional indicator symbol letter e}')
+    await msg.add_reaction('\N{regional indicator symbol letter l}')
+    await msg.add_reaction('\N{regional indicator symbol letter p}')
 
 @commands.cooldown(1, 5, commands.BucketType.user)
 @bot.command()
