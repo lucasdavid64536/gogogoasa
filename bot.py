@@ -93,7 +93,6 @@ async def purge(ctx, number : int):
 
     
 
-@commands.cooldown(1, 5, commands.BucketType.user)
 @bot.command()
 async def help(ctx):
     await ctx.author.send("""Flex Commands :
