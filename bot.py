@@ -89,39 +89,77 @@ async def purge(ctx, number : int):
          
             
 
+
+
+    
 @commands.cooldown(1, 5, commands.BucketType.user)
 @bot.command()
 async def help(ctx):
-    await ctx.author.send("""    Flex commands:
-    
-Funny
-    
+    """help commands"""
+    em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.RANDOM())
+    em.set_author(name="")
+    em.add_field(name=f"{ctx.author.name}", use', inline=True)
+	em.add_field(name="**f.helpfun**- Fun commands")
+	em.add_field(name="**f.helpinfo**- Info commands")
+	em.add_field(name="**f.helpmod**- Moderation commands")
+	em.add_field(name="**f.helpmusic**- Music commands")
+    msg = await ctx.send(embed=em)
+    await msg.add_reaction('\N{regional indicator symbol letter h}')
+	await msg.add_reaction('\N{regional indicator symbol letter e}')
+	await msg.add_reaction('\N{regional indicator symbol letter l}')
+	await msg.add_reaction('\N{regional indicator symbol letter p}')
+
+@commands.cooldown(1, 5, commands.BucketType.user)
+@bot.command()
+async def helpfun(ctx):
+    await ctx.author.send("""Funny Commands
 **f.say** : Make the bot say whatever you want
 **f.ping** : Check the bot latency
 **f.search** : Search something on Google
 **f.avatar** : Get a player's avatar
-**f.8ball** : Ask the Magic 8-Ball
+**f.8ball** : Ask the Magic 8-Ball""")
+    await ctx.send(f':mailbox_with_mail:  | ** {ctx.author.name} ** , check your DMs!')
+    await msg.add_reaction('\N{regional indicator symbol letter h}')
+	await msg.add_reaction('\N{regional indicator symbol letter e}')
+	await msg.add_reaction('\N{regional indicator symbol letter l}')
+	await msg.add_reaction('\N{regional indicator symbol letter p}')
 
-Info
-
+@commands.cooldown(1, 5, commands.BucketType.user)
+@bot.command()
+async def helpinfo(ctx):
+    await ctx.author.send("""Info Commands
 **f.playerinfo @<member>** : Get a member's info
 **f.serverinfo** Get a guild/server info
 **f.botinfo** : Get the bot info
 **f.lenny** : Just a lenny face
 **f.respect** : Pay #respect
-**f.support** : Returns the BOT support server
-
-Moderation
-    
+**f.support** : Returns the BOT support server""")
+    await ctx.send(f':mailbox_with_mail:  | ** {ctx.author.name} ** , check your DMs!')
+    await msg.add_reaction('\N{regional indicator symbol letter h}')
+	await msg.add_reaction('\N{regional indicator symbol letter e}')
+	await msg.add_reaction('\N{regional indicator symbol letter l}')
+	await msg.add_reaction('\N{regional indicator symbol letter p}')
+	
+@commands.cooldown(1, 5, commands.BucketType.user)
+@bot.command()
+async def helpmod(ctx):
+    await ctx.author.send("""Moderation  Commands
 **f.kick** : Kick a member (works only if the player has the Kick perm.)
 **f.ban** : Ban a member (works only if the player has the Ban perm.)
 **f.mass** : Sends a message to all members in a guild (BOT Owner only)
 **f.shutdown** : Shuts down the bot (BOT Owner only)
 **f.purge** : Clears a number of messages (works only if the player has the Manage Channels perm.)
-**f.cat** : Something cute is going on here
-
-Music
-
+**f.cat** : Something cute is going on here""")
+    await ctx.send(f':mailbox_with_mail:  | ** {ctx.author.name} ** , check your DMs!')
+    await msg.add_reaction('\N{regional indicator symbol letter h}')
+	await msg.add_reaction('\N{regional indicator symbol letter e}')
+	await msg.add_reaction('\N{regional indicator symbol letter l}')
+	await msg.add_reaction('\N{regional indicator symbol letter p}')
+	
+@commands.cooldown(1, 5, commands.BucketType.user)
+@bot.command()
+async def helpmusic(ctx):
+    await ctx.author.send("""Music Commands
 **f.play** : Play a song
 **f.stop** : Stops the track
 **f.queue** : See the following tracks
@@ -130,11 +168,10 @@ Music
 **f.resume** : Unpause the track
 **f.join** : Join a voice channel""")
     await ctx.send(f':mailbox_with_mail:  | ** {ctx.author.name} ** , check your DMs!')
-
-    
-
-  
-
+    await msg.add_reaction('\N{regional indicator symbol letter h}')
+	await msg.add_reaction('\N{regional indicator symbol letter e}')
+	await msg.add_reaction('\N{regional indicator symbol letter l}')
+	await msg.add_reaction('\N{regional indicator symbol letter p}')
  
 
  
