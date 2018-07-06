@@ -356,8 +356,6 @@ async def presence():
         await sleep(30)
         await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=' empero-flex.ml | f.help'))
         await sleep(30)
-        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=' Discord Bots Developers'))
-        await sleep(30)
 
 
 @commands.cooldown(1, 5, commands.BucketType.user)  
