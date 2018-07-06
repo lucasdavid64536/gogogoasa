@@ -117,7 +117,6 @@ Moderation
     
 **f.kick** : Kick a member (works only if the player has the Kick perm.)
 **f.ban** : Ban a member (works only if the player has the Ban perm.)
-**f.mass** : Sends a message to all members in a guild (BOT Owner only)
 **f.shutdown** : Shuts down the bot (BOT Owner only)
 **f.purge** : Clears a number of messages (works only if the player has the Manage Channels perm.)
 **f.cat** : Something cute is going on here
