@@ -354,7 +354,7 @@ async def presence():
         await sleep(30)
         await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s users | f.help' % (len(bot.users))))
         await sleep(30)
-        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=' empero-flex.ml | f.help' % (len(bot.users))))
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=' empero-flex.ml | f.help'  (len(bot.users))))
         await sleep(30)
 
 
