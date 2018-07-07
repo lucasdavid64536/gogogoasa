@@ -196,24 +196,6 @@ async def avatar(ctx, member: discord.Member=None):
 
 
 
-@bot.command()
-async def support(ctx):
-    """support"""
-    em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.blue())
-    em.add_field(name=' Support Server', value='[Join ]( https://discord.gg/CYr83P6 )')
-    em.set_thumbnail(url=ctx.me.avatar_url)
-    msg = await ctx.send(embed=em)
-
-
-
-@commands.cooldown(1, 5, commands.BucketType.user)
-@bot.command()
-async def invite(ctx):
-        """support"""
-        em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.blue())
-        em.add_field(name=' Invite Flex In your server!', value='[Invite ]( https://discordapp.com/api/oauth2/authorize?client_id=458912845438910464&permissions=201603158&scope=bot )')
-        em.set_thumbnail(url=ctx.me.avatar_url)
-        msg = await ctx.send(embed=em)
 
 
 @commands.cooldown(1, 5, commands.BucketType.user)
