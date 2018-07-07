@@ -89,49 +89,21 @@ async def purge(ctx, number : int):
          
             
 
-
-
-    
-@commands.cooldown(1, 5, commands.BucketType.user)
+@commands.cooldown(1, 5, commands.BucketType.user)  
 @bot.command()
 async def help(ctx):
-    await ctx.author.send("""Flex Commands :
-  Funny
+    """Help"""
+    em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.blue())
+    em.set_author(name="Flex Help")
+    em.add_field(name="Funny", value='`say,ping,search,avatar,8ball`', inline=False)
+    em.add_field(name="Info", value='`playerinfo,serverinfo,botinfo,lenny,respect,support`', inline=False)
+    em.add_field(name="Moderation", value='`kick,ban,purge,cat`', inline=False)
+    em.add_field(name="Music", value='`play,stop,queue,skip,pause,resume,join`', inline=False)
+    em.set_thumbnail(url=ctx.me.avatar_url)
+    msg = await ctx.send(embed=em)
+  
+
     
-**f.say** : Make the bot say whatever you want
-**f.ping** : Check the bot latency
-**f.search** : Search something on Google
-**f.avatar** : Get a player's avatar
-**f.8ball** : Ask the Magic 8-Ball
-
-Info
-
-**f.playerinfo @<member>** : Get a member's info
-**f.serverinfo** Get a guild/server info
-**f.botinfo** : Get the bot info
-**f.lenny** : Just a lenny face
-**f.respect** : Pay #respect
-**f.support** : Returns the BOT support server
-
-Moderation
-    
-**f.kick** : Kick a member (works only if the player has the Kick perm.)
-**f.ban** : Ban a member (works only if the player has the Ban perm.)
-**f.shutdown** : Shuts down the bot (BOT Owner only)
-**f.purge** : Clears a number of messages (works only if the player has the Manage Channels perm.)
-**f.cat** : Something cute is going on here
-
-Music
-
-**f.play** : Play a song
-**f.stop** : Stops the track
-**f.queue** : See the following tracks
-**f.skip** : Plays the next song
-**f.pause** : Pause the track
-**f.resume** : Unpause the track
-**f.join** : Join a voice channel""")
-    await ctx.send(f':mailbox_with_mail:  | ** {ctx.author.name} ** , check your DMs!')
-
 
  
 
