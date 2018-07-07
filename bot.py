@@ -99,7 +99,6 @@ async def help(ctx):
     em.add_field(name="Info", value='`playerinfo,serverinfo,botinfo,lenny,respect,support`', inline=False)
     em.add_field(name="Moderation", value='`kick,ban,purge,cat`', inline=False)
     em.add_field(name="Music", value='`play,stop,queue,skip,pause,resume,join`', inline=False)
-    em.add_field(name="To eror a command conctat `ŁᵾȼȺsƀøssᵽɍø#0001`", value=' ',inline=False)
     em.set_thumbnail(url=ctx.me.avatar_url)
     msg = await ctx.send(embed=em)
   
