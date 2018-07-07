@@ -196,8 +196,13 @@ async def avatar(ctx, member: discord.Member=None):
 
 
 
-
-
+@bot.command()
+async def support(ctx):
+    """support"""
+em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.blue())
+em.add_field(name=' Support Server', value='[Join ]( https://discord.gg/CYr83P6 )')
+em.set_thumbnail(url=ctx.me.avatar_url)
+msg = await ctx.send(embed=em)
 
 
 
