@@ -209,8 +209,12 @@ msg = await ctx.send(embed=em)
 @commands.cooldown(1, 5, commands.BucketType.user)
 @bot.command()
 async def invite(ctx):
-    """Gives you the BOT invite link."""
-    await ctx.send("Invite the BOT here: https://discordapp.com/api/oauth2/authorize?client_id=458912845438910464&permissions=201603158&scope=bot")
+        """support"""
+em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.blue())
+em.add_field(name=' Invite Flex In your server!', value='[Invite ]( https://discordapp.com/api/oauth2/authorize?client_id=458912845438910464&permissions=201603158&scope=bot )')
+em.set_thumbnail(url=ctx.me.avatar_url)
+msg = await ctx.send(embed=em)
+
 
 @commands.cooldown(1, 5, commands.BucketType.user)
 @bot.command()
