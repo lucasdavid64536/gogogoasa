@@ -95,9 +95,9 @@ async def help(ctx):
     """Help"""
     em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.blue())
     em.set_author(name="Flex Help")
-    em.add_field(name="Funny", value='`say,ping,search,avatar,8ball`', inline=False)
+    em.add_field(name="Funny", value='`say,ping,cat,avatar,8ball`', inline=False)
     em.add_field(name="Info", value='`playerinfo,serverinfo,botinfo,lenny,respect,support`', inline=False)
-    em.add_field(name="Moderation", value='`kick,ban,purge,cat`', inline=False)
+    em.add_field(name="Moderation", value='`kick,ban,purge`', inline=False)
     em.add_field(name="Music", value='`play,stop,queue,skip,pause,resume,join`', inline=False)
     em.add_field(name="More", value='`feedback,bug`', inline=False)
     em.set_thumbnail(url=ctx.me.avatar_url)
@@ -162,22 +162,6 @@ async def on_command_error(ctx, error):
 
 
 
-@commands.cooldown(1, 5, commands.BucketType.user)
-@bot.command()
-async def search(ctx, *, query):
-    search = query
-    URL = "https://www.google.com/search?q="
-    words = search.split(" ")
-
-    num = 0
-    for w in words:
-        if num is 0:
-            URL = URL + w
-            num = 1
-        else:
-            URL = URL + "+"+ w
-
-    await ctx.send(URL)
 
 @commands.cooldown(1, 5, commands.BucketType.user)
 @bot.command()
