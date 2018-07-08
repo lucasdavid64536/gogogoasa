@@ -14,7 +14,7 @@ from discomaton.factories import bookbinding
 import async_timeout
 
 global admin_perm_id
-admin_perm_id = [419472407816830986]
+admin_perm_id = [419472407816830986,353967891319619587]
 
 
 class Admin():
