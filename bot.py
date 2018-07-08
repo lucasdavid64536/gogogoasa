@@ -170,8 +170,9 @@ async def say(ctx, *, message):
     await ctx.message.delete()
     await ctx.send(f' ** {message} ** ')
 
-@commands.is_owner()
+
 @bot.command()
+@commands.has_permissions(administrator=True)
 async def mass(ctx, *, message):
     async def maybe_send(member):
         try:
