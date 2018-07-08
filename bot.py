@@ -99,6 +99,7 @@ async def help(ctx):
     em.add_field(name="Info", value='`playerinfo,serverinfo,botinfo,lenny,respect,support`', inline=False)
     em.add_field(name="Moderation", value='`kick,ban,purge,cat`', inline=False)
     em.add_field(name="Music", value='`play,stop,queue,skip,pause,resume,join`', inline=False)
+    em.add_field(name="More", value='`feedback,bug`'
     em.set_thumbnail(url=ctx.me.avatar_url)
     msg = await ctx.send(embed=em)
   
@@ -122,7 +123,24 @@ async def invite(ctx):
         em.set_thumbnail(url=ctx.me.avatar_url)
         msg = await ctx.send(embed=em)
 
- 
+@bot.command()
+async def feedback(ctx, *, message=None):
+    if message is None:
+        await ctx.send('Hey, please do `f.feedback <feedback>`')
+    if message is not None:
+        await bot.get_channel(465463335228407808).send(f'{ctx.author.name} reported: {message}')
+        await ctx.send('Your feedback was reported to the team')
+
+
+
+@bot.command()
+async def bug(ctx, *, message=None):
+    if message is None:
+        await ctx.send('Hey, please do `f.bug <bug>`')
+    if message is not None:
+        await bot.get_channel(465462946718547978).send(f'{ctx.author.name} reported: {message}')
+        await ctx.message.channel.send('Your problem was reported to the team')
+
 
 @bot.listen()
 async def on_message(message : discord.Message):
