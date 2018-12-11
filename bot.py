@@ -131,7 +131,13 @@ async def feedback(ctx, *, message=None):
         await bot.get_channel(465463335228407808).send(f'{ctx.author.name} reported: {message}')
         await ctx.send('Your feedback was reported to the team')
 
-
+@bot.command()
+async def request(ctx, *, message=None):
+    if message is None:
+        await ctx.send('Hey, please do `f.request <name for website>`')
+    if message is not None:
+        await bot.get_channel(521766366102159370).send(f'{ctx.author.name} reported: {message}')
+        await ctx.member.send('You command is preparing...')
 
 @bot.command()
 async def bug(ctx, *, message=None):
