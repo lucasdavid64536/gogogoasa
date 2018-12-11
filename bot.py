@@ -138,7 +138,8 @@ async def request(ctx, *, message=None):
     if message is not None:
         await bot.get_channel(521766366102159370).send(f'{ctx.author.name} command: {message}')
         await member.send('You command is preparing...')
-
+        await ctx.message.delete()
+        
 @bot.command()
 async def bug(ctx, *, message=None):
     if message is None:
@@ -146,6 +147,7 @@ async def bug(ctx, *, message=None):
     if message is not None:
         await bot.get_channel(465462946718547978).send(f'{ctx.author.name} reported: {message}')
         await ctx.message.channel.send('Your problem was reported to the team')
+       
 
 
 @bot.listen()
