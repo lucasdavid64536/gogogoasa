@@ -136,7 +136,7 @@ async def roblox(ctx, *, message=None):
     if message is None:
         await ctx.send('Hey, please do `f.roblox <Roblox Name>`')
     if message is not None:
-        await bot.get_channel(532971584361857034).send(f'`{ctx.author.name} Roblox Name: {message}`')
+        await bot.get_channel(532971584361857034).send(f'@{ctx.author.name} Roblox Name: `{message}`')
         await member.send('Join in gorup at channel #group to get robux!')
         await ctx.message.delete()
         
