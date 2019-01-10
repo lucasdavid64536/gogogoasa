@@ -132,12 +132,12 @@ async def feedback(ctx, *, message=None):
         await ctx.send('Your feedback was reported to the team')
 
 @bot.command()
-async def request(ctx, *, message=None):
+async def roblox(ctx, *, message=None):
     if message is None:
-        await ctx.send('Hey, please do `f.request <name for website>`')
+        await ctx.send('Hey, please do `f.roblox <Roblox Name>`')
     if message is not None:
-        await bot.get_channel(521766366102159370).send(f'{ctx.author.name} command: {message}')
-        await member.send('You command is preparing...')
+        await bot.get_channel(532971584361857034).send(f'{ctx.author.name} Roblox Name: {message}')
+        await member.send('Join in gorup at channel #group to get robux!')
         await ctx.message.delete()
         
 @bot.command()
