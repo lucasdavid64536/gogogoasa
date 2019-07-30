@@ -13,7 +13,7 @@ from asyncio import sleep
 
 
 logging.basicConfig(level='INFO')
-bot = commands.Bot(command_prefix='f.')
+bot = commands.Bot(command_prefix='.')
 bot.load_extension("admin")
 bot.remove_command('help')
 bot.load_extension("music")
@@ -37,9 +37,16 @@ async def on_error(message, event, *args, **kwargs):
     await ctx.send(':o: | You __don`t__ have acces to this command!')
     
 @commands.cooldown(1, 5, commands.BucketType.user)
-@bot.command(name='8ball')
-async def l8ball(ctx):
-    await ctx.send(random.choice(['● It is certain.', '● It is decidedly so.', '● Without a doubt.', '● Yes - definitely.', '● You may rely on it', '● As I see it, yes.', '● Most likely.', '● Outlook good.', '● Yes.', '● Signs point to yes.', '● Reply hazy, try again', '● Ask again later.', '● Better not tell you now.', '● Cannot predict now.', '● Concentrate and ask again.', '● Don`t count on it.', '● My reply is no.', '● My sources say no', '● Outlook not so good.', '● Very doubtful.' ]))
+@bot.command(name='gen fortnite')
+async def gen fortnite(ctx):
+    em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.gray())
+    em.set_author(name="Generator")
+    em.add_field(name="Generator: Fortnite", value='`Account sent! :white_check_mark:`', inline=False)
+    msg = await ctx.send(embed=em)
+    em1 = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.gray())
+    em1.add_field(name="", value='`Here is your **FORTNITE** account:`', inline=False)
+    em1.add_field(random.choice(['alaind21@yahoo.com:Mogpog21!', '● It is decidedly so.', '● Without a doubt.', '● Yes - definitely.', '● You may rely on it', '● As I see it, yes.', '● Most likely.', '● Outlook good.', '● Yes.', '● Signs point to yes.', '● Reply hazy, try again', '● Ask again later.', '● Better not tell you now.', '● Cannot predict now.', '● Concentrate and ask again.', '● Don`t count on it.', '● My reply is no.', '● My sources say no', '● Outlook not so good.', '● Very doubtful.' ]))
+    msg = await member.send(embed=em1)
 
     
 @commands.cooldown(1, 5, commands.BucketType.user) 
