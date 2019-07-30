@@ -35,8 +35,8 @@ async def on_error(message, event, *args, **kwargs):
     await ctx.send(':o: | You __don`t__ have acces to this command!')
     
 @commands.cooldown(1, 5, commands.BucketType.user)
-@bot.command(name='gen fortnite')
-async def gen fortnite(ctx):
+@bot.command(name='fortnite')
+async def fortnite(ctx):
     em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.gray())
     em.set_author(name="Generator")
     em.add_field(name="Generator: Fortnite", value='`Account sent! :white_check_mark:`', inline=False)
