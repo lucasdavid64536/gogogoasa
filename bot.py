@@ -3,6 +3,7 @@
 import discord
 import random
 from discord.ext import commands
+from discord.ext.commands import bot
 import logging
 import traceback
 import asyncio
